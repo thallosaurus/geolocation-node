@@ -6,17 +6,12 @@ var fs = require("fs");
 
 var app = express();
 
-//express config
+//express config BEGIN
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 //express config END
 
-//https config
-/* var options = {
-	key: __dirname + "/cert/privateKey.pem",
-    cert: __dirname + "/cert/cert.pem"
-}; */
-
+//https config BEGIN
 var options = {
 	key: fs.readFileSync('key.pem'),
 	cert: fs.readFileSync('cert.pem'),
